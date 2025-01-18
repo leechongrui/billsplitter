@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Group Expense</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grpaddexp-container">
+    <h2>Add Group Expense</h2>
+
+    <!-- Group Expense Input -->
+    <div class="expense-input">
+      <label for="bill-name">Bill Name:</label>
+      <input type="text" id="bill-name" placeholder="e.g., Buffet" required>
+      <label for="bill-amount">Amount:</label>
+      <input type="number" id="bill-amount" placeholder="e.g., $400" required>
+    </div>
+
+    <!-- Participants Dropdown -->
+    <div class="participants-section">
+      <label for="friends-dropdown">Add Participants:</label>
+      <select id="friends-dropdown" multiple>
+        <option value="John Doe">John Doe</option>
+        <option value="Jane Smith">Jane Smith</option>
+        <option value="Mike Johnson">Mike Johnson</option>
+        <option value="You">You</option>
+      </select>
+      <button class="add-participant-button" onclick="addParticipants()">Add Selected</button>
+    </div>
+
+    <!-- Display Selected Participants -->
+    <div class="selected-participants">
+      <h3>Participants Added:</h3>
+      <ul id="participants-list">
+        <!-- Selected participants will be added here -->
+      </ul>
+    </div>
+
+    <!-- Split Calculation -->
+    <div class="split-calculation">
+      <h3>Split the Bill:</h3>
+      <p id="split-amount">Each person pays: $0</p>
+      <button class="calculate-split-button" onclick="calculateSplit()">Calculate</button>
+    </div>
+  </div>
+
+  <script>
+    let participants = [];
+    const friendsList = ["John Doe", "Jane Smith", "Mike Johnson", "You"];
+
+    // Function to add selected participants to the list
+    function addParticipants() {
+      const selectedOptions = document.getElementById('friends-dropdown').selectedOptions;
+      const participantsList = document.getElementById('participants-list');
+
+      // Clear previous list
+      participantsList.innerHTML = '';
+
+      participants = [];
+      for (let i = 0; i < selectedOptions.length; i++) {
+        participants.push(selectedOptions[i].value);
+        const li = document.createElement('li');
+        li.textContent = selectedOptions[i].value;
+        participantsList.appendChild(li);
+      }
+    }
+
+    // Function to calculate split amount
+    function calculateSplit() {
+      const billAmount = document.getElementById('bill-amount').value;
+      if (billAmount && participants.length > 0) {
+        const splitAmount = (billAmount / participants.length).toFixed(2);
+        document.getElementById('split-amount').textContent = `Each person pays: $${splitAmount}`;
+      } else {
+        alert("Please enter a bill amount and add participants.");
+      }
+    }
+  </script>
+</body>
+</html>

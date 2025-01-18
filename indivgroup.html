@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Individual Group</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="indivgroup-container">
+    <!-- Top Overview Section -->
+    <div class="top-div">
+      <h2>Amount Owed to Friends</h2>
+      <ul class="owed-list">
+        <li>John Doe: $30</li>
+        <li>Jane Smith: $20</li>
+        <li>Mike Johnson: $15</li>
+      </ul>
+    </div>
+
+    <!-- Add Expense Button (Directs to grpaddexp.html) -->
+    <a href="grpaddexp.html">
+      <button class="add-expense-button">Add Expense</button>
+    </a>
+
+    <!-- Bottom Transactions Section -->
+    <div class="bottom-div">
+      <h2>Transactions</h2>
+      <div class="month-category">
+        <h3>January</h3>
+        <ul class="transaction-list">
+          <li>Lunch with John: $20</li>
+          <li>Taxi ride with Jane: $15</li>
+        </ul>
+      </div>
+      <div class="month-category">
+        <h3>February</h3>
+        <ul class="transaction-list">
+          <li>Groceries with Mike: $10</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openAddExpensePopup() {
+      document.getElementById('add-expense-popup').classList.remove('hidden');
+    }
+
+    function closeAddExpensePopup() {
+      document.getElementById('add-expense-popup').classList.add('hidden');
+    }
+
+    document.getElementById('add-expense-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const description = document.getElementById('expense-description').value;
+      const cost = document.getElementById('expense-cost').value;
+      // Add logic to handle adding expense (e.g., update UI or send to server)
+      alert(`Expense Added: ${description} - $${cost}`);
+      closeAddExpensePopup();
+    });
+  </script>
+</body>
+</html>

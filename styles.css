@@ -264,4 +264,268 @@ body {
     color: white;
     border: none;
   }
+
+  /*indivgroup page*/
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .indivgroup-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Top Overview Section */
+  .top-div {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .top-div h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .owed-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .owed-list li {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* Add Expense Button */
+  .add-expense-button {
+    padding: 10px 20px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .add-expense-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Bottom Transactions Section */
+  .bottom-div {
+    margin-top: 20px;
+  }
+  
+  .bottom-div h2 {
+    margin-bottom: 15px;
+  }
+  
+  .month-category {
+    margin-bottom: 20px;
+  }
+  
+  .month-category h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .transaction-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .transaction-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 15px;
+  }
+  
+  .popup-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-content input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .popup-content button {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .popup-content button:nth-child(1) {
+    background: #007BFF;
+    color: white;
+    border: none;
+  }
+  
+  .popup-content button:nth-child(2) {
+    background: #DC3545;
+    color: white;
+    border: none;
+  }
+  
+  /*grpaddexp page*/
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .grpaddexp-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Expense Input */
+  .expense-input {
+    margin-bottom: 20px;
+  }
+  
+  .expense-input label {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .expense-input input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Participants Section */
+  .participants-section {
+    margin-bottom: 20px;
+  }
+  
+  .participants-section label {
+    font-size: 16px;
+  }
+  
+  .participants-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .add-participant-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-participant-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Selected Participants */
+  .selected-participants {
+    margin-bottom: 20px;
+  }
+  
+  .selected-participants ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .selected-participants li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Split Calculation */
+  .split-calculation {
+    margin-top: 20px;
+  }
+  
+  .split-calculation h3 {
+    font-size: 18px;
+  }
+  
+  .split-calculation p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .calculate-split-button {
+    padding: 10px 20px;
+    background-color: #28A745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .calculate-split-button:hover {
+    background-color: #218838;
+  }
+  
   

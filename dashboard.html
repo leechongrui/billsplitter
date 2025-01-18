@@ -23,14 +23,9 @@
 
     <!-- Groups and Net Expenditure Section -->
     <div class="groups-div">
-      <h2>Your Groups</h2>
-      <div class="group">
-        <p>Group Name: Travel Buddies</p>
-        <p>Net Expenditure: +$30</p>
-      </div>
-      <div class="group">
-        <p>Group Name: Family Dinners</p>
-        <p>Net Expenditure: -$20</p>
+      <h2>Groups</h2>
+      <div id="group-tabs">
+        <!-- Group buttons will be dynamically added here by JavaScript -->
       </div>
     </div>
   </div>
@@ -39,22 +34,14 @@
   <div id="create-group-popup" class="popup hidden">
     <div class="popup-content">
       <h2>Create Group</h2>
-      <form>
-        <input type="text" placeholder="Group Name" required>
+      <form id="create-group-form">
+        <input type="text" id="new-group-name" placeholder="Group Name" required>
         <button type="submit">Create</button>
         <button type="button" onclick="closePopup()">Cancel</button>
       </form>
     </div>
   </div>
 
-  <script>
-    function openPopup() {
-      document.getElementById('create-group-popup').classList.remove('hidden');
-    }
-
-    function closePopup() {
-      document.getElementById('create-group-popup').classList.add('hidden');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

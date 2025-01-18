@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="registration-container">
+    <h1 class="registration-title">Register</h1>
+    <form id="registrationForm" class="registration-form">
+      <div class="registration-form-group">
+        <label for="reg-fullname">Full Name:</label>
+        <input type="text" id="reg-fullname" name="fullname" required>
+      </div>
+      <div class="registration-form-group">
+        <label for="reg-username">Username:</label>
+        <input type="text" id="reg-username" name="username" required>
+      </div>
+      <div class="registration-form-group">
+        <label for="reg-age">Age:</label>
+        <input type="number" id="reg-age" name="age" required>
+      </div>
+      <div class="registration-form-group">
+        <label for="reg-email">Email Address:</label>
+        <input type="email" id="reg-email" name="email" required>
+      </div>
+      <div class="registration-form-group">
+        <label for="reg-contact">Contact Number:</label>
+        <input type="tel" id="reg-contact" name="contact" required>
+      </div>
+      <div class="registration-form-group">
+        <label for="reg-password">Password:</label>
+        <input type="password" id="reg-password" name="password" required>
+      </div>
+      <div class="registration-form-group">
+        <label for="reg-confirmPassword">Confirm Password:</label>
+        <input type="password" id="reg-confirmPassword" name="confirmPassword" required>
+      </div>
+      <button type="submit" class="registration-submit-button">Register</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fullname = document.getElementById('reg-fullname').value;
+      const username = document.getElementById('reg-username').value;
+      const age = document.getElementById('reg-age').value;
+      const email = document.getElementById('reg-email').value;
+      const contact = document.getElementById('reg-contact').value;
+      const password = document.getElementById('reg-password').value;
+      const confirmPassword = document.getElementById('reg-confirmPassword').value;
+
+      // Password validation
+      if (password !== confirmPassword) {
+        alert('Passwords do not match! Please re-enter.');
+        document.getElementById('reg-password').focus();
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullname, username, age, email, contact, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Registration successful
+          alert('Registration successful! Redirecting to login page...');
+          window.location.href = `login.html?username=${encodeURIComponent(username)}`;
+        } else {
+          // Registration failed
+          alert(`Registration failed: ${data.message}`);
+          if (data.field) {
+            document.getElementById(`reg-${data.field}`).focus();
+          }
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+        alert('An unexpected error occurred. Please try again later.');
+      }
+    });
+  </script>
+</body>
+</html>

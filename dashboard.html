@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Top Overview Section -->
+    <div class="top-div">
+      <h2>Overview</h2>
+      <p>You owe: $50</p>
+      <p>People owe you: $80</p>
+    </div>
+
+    <!-- Friends and Create Group Section -->
+    <div class="actions">
+      <button class="friends-button" onclick="location.href='friends.html'">Friends</button>
+      <button class="create-group-button" onclick="openPopup()">Create Group</button>
+    </div>
+
+    <!-- Groups and Net Expenditure Section -->
+    <div class="groups-div">
+      <h2>Your Groups</h2>
+      <div class="group">
+        <p>Group Name: Travel Buddies</p>
+        <p>Net Expenditure: +$30</p>
+      </div>
+      <div class="group">
+        <p>Group Name: Family Dinners</p>
+        <p>Net Expenditure: -$20</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup for Create Group -->
+  <div id="create-group-popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Create Group</h2>
+      <form>
+        <input type="text" placeholder="Group Name" required>
+        <button type="submit">Create</button>
+        <button type="button" onclick="closePopup()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById('create-group-popup').classList.remove('hidden');
+    }
+
+    function closePopup() {
+      document.getElementById('create-group-popup').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

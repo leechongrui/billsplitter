@@ -1,0 +1,267 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Top Overview Section */
+  .top-div {
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .top-div h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .top-div p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* Buttons Section */
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .friends-button {
+    background: #28A745;
+    color: white;
+  }
+  
+  .create-group-button {
+    background: #DC3545;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Groups Section */
+  .groups-div {
+    margin-top: 20px;
+  }
+  
+  .groups-div h2 {
+    margin-bottom: 15px;
+  }
+  
+  .group {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .group p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 15px;
+  }
+  
+  .popup-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-content input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .popup-content button {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .popup-content button:nth-child(1) {
+    background: #007BFF;
+    color: white;
+    border: none;
+  }
+  
+  .popup-content button:nth-child(2) {
+    background: #DC3545;
+    color: white;
+    border: none;
+  }
+  
+  /*friends page*/
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .friends-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Friends Page Header */
+  .friends-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .participant-id {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .add-friend-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-friend-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Friends List Section */
+  .friends-list h2 {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+  
+  .friend-items {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .friend-items li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 15px;
+  }
+  
+  .popup-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-content input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .popup-content button {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .popup-content button:nth-child(1) {
+    background: #007BFF;
+    color: white;
+    border: none;
+  }
+  
+  .popup-content button:nth-child(2) {
+    background: #DC3545;
+    color: white;
+    border: none;
+  }
+  

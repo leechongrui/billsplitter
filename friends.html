@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="friends-container">
+    <!-- Display Participant ID -->
+    <div class="friends-header">
+      <div class="participant-id">ABCD</div> <!-- Example Participant ID -->
+      <button class="add-friend-button" onclick="openAddFriendPopup()">Add Friend</button>
+    </div>
+
+    <!-- Existing Friends List -->
+    <div class="friends-list">
+      <h2>Existing Friends</h2>
+      <ul class="friend-items">
+        <li>John Doe (1234)</li>
+        <li>Jane Smith (5678)</li>
+        <li>Mike Johnson (9101)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Add Friend Popup -->
+  <div id="add-friend-popup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Add Friend</h2>
+      <form id="add-friend-form">
+        <input type="text" id="friend-id" placeholder="Enter Friend's ID" required>
+        <button type="submit">Add Friend</button>
+        <button type="button" onclick="closeAddFriendPopup()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openAddFriendPopup() {
+      document.getElementById('add-friend-popup').classList.remove('hidden');
+    }
+
+    function closeAddFriendPopup() {
+      document.getElementById('add-friend-popup').classList.add('hidden');
+    }
+
+    document.getElementById('add-friend-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const friendId = document.getElementById('friend-id').value;
+      // Add logic to handle adding friend (e.g., update UI or send to server)
+      alert(`Friend with ID ${friendId} added!`);
+      closeAddFriendPopup();
+    });
+  </script>
+</body>
+</html>

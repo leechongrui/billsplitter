@@ -8,6 +8,11 @@
 </head>
 <body>
   <div class="dashboard-container">
+    <!-- Personalized Welcome Message -->
+    <div class="welcome-message">
+      <h1 id="welcome-message">Welcome!</h1>
+    </div>
+
     <!-- Top Overview Section -->
     <div class="top-div">
       <h2>Overview</h2>
@@ -48,13 +53,30 @@
   </div>
 
   <script>
+    // Function to fetch the username from the query string and personalize the dashboard
+    function personalizeDashboard() {
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get('username');
+
+      if (username) {
+        document.getElementById('welcome-message').textContent = `Welcome, ${username}!`;
+      } else {
+        document.getElementById('welcome-message').textContent = 'Welcome, Guest!';
+      }
+    }
+
+    // Function to open the create group popup
     function openPopup() {
       document.getElementById('create-group-popup').classList.remove('hidden');
     }
 
+    // Function to close the create group popup
     function closePopup() {
       document.getElementById('create-group-popup').classList.add('hidden');
     }
+
+    // Call the function to personalize the dashboard when the page loads
+    personalizeDashboard();
   </script>
 </body>
 </html>
